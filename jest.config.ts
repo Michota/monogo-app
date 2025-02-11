@@ -176,6 +176,7 @@ const config: Config = {
         useESM: true,
       },
     ],
+    "^.+\\.css$": ["jest-transform-css", { modules: true, generateScopedName: "[path]_[name]_[local]" }],
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
