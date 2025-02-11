@@ -4,11 +4,12 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 export default tseslint.config(
   { ignores: ["dist"] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [js.configs.recommended, ...pluginQuery.configs["flat/recommended"], ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
