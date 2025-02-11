@@ -3,3 +3,5 @@
 
 # enable `pnpm test` once jest is installed
 # pnpm test
+
+pnpm dlx lint-staged
