@@ -4,4 +4,9 @@ function randomWordsString(wordsNumber: number = 3, words: string[] = wordList):
   return Array.from({ length: wordsNumber }, () => words[Math.floor(Math.random() * words.length)]).join(" ");
 }
 
-export { randomWordsString };
+function createStringWithCertainLength(stringLength: number) {
+  const truth = "IAm19CharactersLong";
+  return randomWordsString(Math.ceil(stringLength / truth.length), [truth]).slice(0, stringLength);
+}
+
+export { randomWordsString, createStringWithCertainLength };
