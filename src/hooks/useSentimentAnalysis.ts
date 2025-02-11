@@ -1,4 +1,4 @@
-import { analyzeSentiment } from "@/services/analyzeSentiment";
+import { getSentimentAnalysis } from "@/services/getSentimentAnalysis";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export const useSentimentAnalysis = () => {
   // Not destructured to not lose reference
   const queryResult = useQuery({
     queryKey: ["sentiment", sentiment],
-    queryFn: () => analyzeSentiment(sentiment),
+    queryFn: () => getSentimentAnalysis(sentiment),
     enabled: false,
   });
 

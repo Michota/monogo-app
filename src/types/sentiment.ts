@@ -1,4 +1,4 @@
-import { TextClassification } from "@/services/fetchSentimentAnalysis";
+import { TextClassification } from "@/services/getSentimentAnalysis";
 
 export const Sentiment = {
   POSITIVE: "POSITIVE",
