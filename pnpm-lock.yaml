@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@huggingface/inference':
+        specifier: ^3.3.2
+        version: 3.3.2
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -465,6 +468,13 @@ packages:
   '@eslint/plugin-kit@0.2.5':
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@huggingface/inference@3.3.2':
+    resolution: {integrity: sha512-ewDyPJox0F5AANrTfmkmh3UdHp/ZHSCcIEWGgd+lNVo9IseSkjiP8KVMeckmzGqp/Nm+LXmW07yCb2g0bYwW/g==}
+    engines: {node: '>=18'}
+
+  '@huggingface/tasks@0.15.9':
+    resolution: {integrity: sha512-cbnZcpMHKdhURWIplVP4obHxAZcxjyRm0zI7peTPksZN4CtIOMmJC4ZqGEymo0lk+0VNkXD7ULwFJ3JjT/VpkQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2886,6 +2896,12 @@ snapshots:
     dependencies:
       '@eslint/core': 0.10.0
       levn: 0.4.1
+
+  '@huggingface/inference@3.3.2':
+    dependencies:
+      '@huggingface/tasks': 0.15.9
+
+  '@huggingface/tasks@0.15.9': {}
 
   '@humanfs/core@0.19.1': {}
 
