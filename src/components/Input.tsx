@@ -3,18 +3,15 @@ import React, { useState } from "react";
 const MAX_LENGTH_INPUT_VALUE = 500;
 
 type ReactInputProps = React.ComponentProps<"input">;
+type InputProps = Omit<ReactInputProps, "max" | "min">;
 
-interface InputProps extends ReactInputProps {
-  max?: number;
-}
-
-function Input({ value: passedValue, defaultValue, max: maxLength = MAX_LENGTH_INPUT_VALUE, ...props }: InputProps) {
+function Input({ value: passedValue, defaultValue, maxLength = MAX_LENGTH_INPUT_VALUE, ...props }: InputProps) {
   const [value, setValue] = useState<InputProps["value"]>(passedValue || defaultValue);
   return (
     <input
       {...props}
       value={value}
-      max={maxLength}
+      maxLength={maxLength}
       onChange={(e) => {
         let newValue = e.target.value;
 

@@ -7,7 +7,7 @@ const TEST_LABEL = "test-input";
 const TEST_VALUE_MAX_LENGTH = 500;
 
 const setup = () => {
-  const utils = render(<Input defaultValue={TEST_TEXT} aria-label={TEST_LABEL} />);
+  const utils = render(<Input defaultValue={TEST_TEXT} aria-label={TEST_LABEL} maxLength={TEST_VALUE_MAX_LENGTH} />);
   const inputElement = screen.getByLabelText<HTMLInputElement>(TEST_LABEL);
   return {
     inputElement,
