@@ -1,9 +1,10 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Input from "../Input";
-import { randomWordsString } from "@/utils/testsUtils/randomWordsString";
+import { createStringWithCertainLength, randomWordsString } from "@/utils/testsUtils/stringGenerators";
 
 const TEST_TEXT = "Dawid Michota nadaje się do Monogo";
 const TEST_LABEL = "test-input";
+const TEST_VALUE_MAX_LENGTH = 500;
 
 const setup = () => {
   const utils = render(<Input defaultValue={TEST_TEXT} aria-label={TEST_LABEL} />);
@@ -31,5 +32,15 @@ describe("render input", () => {
 
     fireEvent.change(inputElement, { target: { value: randomText } });
     expect(inputElement.value).toEqual(randomText);
+  });
+
+  test(`Max length test: ensure input value is not longer than ${TEST_VALUE_MAX_LENGTH} characters`, () => {
+    const { inputElement } = renderedInstance;
+
+    const tooLongText = createStringWithCertainLength(TEST_VALUE_MAX_LENGTH + 10);
+
+    fireEvent.input(inputElement, { target: { value: tooLongText } });
+    expect(tooLongText.length).toBeGreaterThan(TEST_VALUE_MAX_LENGTH);
+    expect(inputElement.value.length).toEqual(TEST_VALUE_MAX_LENGTH);
   });
 });
