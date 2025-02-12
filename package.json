@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@huggingface/inference": "^3.3.2",
+    "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
