@@ -46,7 +46,7 @@ function SentimentForm({ isAnalysisResultLoading, defaultText, setText, onInitia
             )}
           />
 
-          <Button onClick={onInitializeAnalysis} isLoading={isAnalysisResultLoading}>
+          <Button type="submit" isLoading={isAnalysisResultLoading}>
             Analizuj
           </Button>
         </div>
