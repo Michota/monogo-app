@@ -1,37 +1,14 @@
-import React, { useState } from "react";
 import clsx from "clsx";
+import React from "react";
 import styles from "./styles/Input.module.css";
 
-const MAX_LENGTH_INPUT_VALUE = 500;
+type InputProps = React.ComponentProps<"input">;
 
-type ReactInputProps = React.ComponentProps<"input">;
-type InputProps = Omit<ReactInputProps, "max" | "min">;
-
-function Input({
-  value: passedValue,
-  defaultValue,
-  maxLength = MAX_LENGTH_INPUT_VALUE,
-  className,
-  ...props
-}: InputProps) {
-  const [value, setValue] = useState<InputProps["value"]>(passedValue || defaultValue);
+function Input({ className, ...props }: InputProps) {
   return (
-    <input
-      {...props}
-      value={value}
-      className={clsx(className, styles.input)}
-      maxLength={maxLength}
-      onChange={(e) => {
-        let newValue = e.target.value;
-
-        if (newValue.length > maxLength) {
-          newValue = newValue.slice(0, maxLength);
-        }
-
-        setValue(newValue);
-        props.onChange?.(e);
-      }}
-    />
+    <div>
+      <input {...props} className={clsx(className, styles.input)} />
+    </div>
   );
 }
 
