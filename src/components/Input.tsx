@@ -5,11 +5,7 @@ import styles from "./styles/Input.module.css";
 type InputProps = React.ComponentProps<"input">;
 
 function Input({ className, ...props }: InputProps) {
-  return (
-    <div>
-      <input {...props} className={clsx(className, styles.input)} />
-    </div>
-  );
+  return <input {...props} className={clsx(className, styles.input)} />;
 }
 
 export default Input;

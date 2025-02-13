@@ -11,11 +11,20 @@ interface SentimentFormProps {
 
 function SentimentForm({ isAnalysisResultLoading, text, setText, onInitializeAnalysis }: SentimentFormProps) {
   return (
-    <div className={styles.container}>
-      <Input disabled={isAnalysisResultLoading} value={text} onChange={(e) => setText(e.target.value)} />
-      <Button onClick={onInitializeAnalysis} isLoading={isAnalysisResultLoading}>
-        Analizuj
-      </Button>
+    <div className={styles.formWrapper}>
+      <div className={styles.container}>
+        <Input disabled={isAnalysisResultLoading} value={text} onChange={(e) => setText(e.target.value)} />
+        <Button onClick={onInitializeAnalysis} isLoading={isAnalysisResultLoading}>
+          Analizuj
+        </Button>
+      </div>
+      {!isAnalysisResultLoading && (
+        <div className={styles.errorWrapper}>
+          <span className={styles.error}>
+            {"I am error I am error I am error I am error I am error I am error I am error I am error"}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
