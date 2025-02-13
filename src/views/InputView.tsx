@@ -1,5 +1,5 @@
 import Modal from "@/components/Modal";
-import SentimentDescription from "@/components/SentimentDescription";
+import SentimentDescription from "@/views/components/SentimentDescription";
 import { useSentimentAnalysis } from "@/hooks/useSentimentAnalysis";
 import { getDominantSentiment } from "@/utils/getDominantSentiment";
 import { useState } from "react";
