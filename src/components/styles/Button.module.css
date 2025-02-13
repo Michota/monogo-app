@@ -1,0 +1,32 @@
+@import "@/styles/variables.css";
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--brand);
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
+  &::selection {
+    background: none;
+  }
+}
+
+.buttonLoading {
+  /* Darken background color by 30% using color-mix */
+  background-color: color-mix(in srgb, var(--background-primary) 70%, black 30%);
+  color: color-mix(in srgb, white 80%, black 20%);
+}
+
+.buttonDisabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}

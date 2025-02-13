@@ -1,0 +1,13 @@
+@import "@/styles/variables.css";
+
+.input {
+  border: none;
+  background-color: var(--background-secondary);
+  outline: none;
+  padding: 1rem 0rem 1rem 1rem;
+
+  &:active,
+  &:focus {
+    outline: 1px solid var(--brand);
+  }
+}

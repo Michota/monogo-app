@@ -1,0 +1,17 @@
+@import "@/styles/variables.css";
+
+.description {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &[data-sentiment="POSITIVE"] {
+    color: var(--positive);
+  }
+  &[data-sentiment="NEGATIVE"] {
+    color: var(--negative);
+  }
+  &[data-sentiment="NEUTRAL"] {
+    color: var(--text-primary);
+  }
+}
