@@ -16,7 +16,7 @@ function SentimentDescription({ data }: SentimentDescriptionProps) {
 
   return (
     <div id={tooltipInitializerId} data-sentiment={data.label} className={styles.description}>
-      <SentimentIcon isEmotionStrong={isEmotionStrong} sentiment={data.label} />
+      <SentimentIcon data-testid="sentiment-icon" isEmotionStrong={isEmotionStrong} sentiment={data.label} />
       <span>{createSentimentDescription(data.label, isEmotionStrong)}</span>
       {isNegative && <Tooltip anchorSelect={`#${tooltipInitializerId}`}>Może spróbuj być milszy, co?</Tooltip>}
     </div>
