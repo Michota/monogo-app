@@ -8,18 +8,18 @@ interface ModalControls {
   onModalClose?: () => void;
 }
 
-function Modal({ children, isModalOpen = true }: PropsWithChildren<ModalControls>) {
+function Modal({ children, onModalClose, isModalOpen = true }: PropsWithChildren<ModalControls>) {
   if (!isModalOpen) {
     return;
   }
 
-  return createPortal(<ModalContent children={children} />, document.body);
+  return createPortal(<ModalContent children={children} onModalClose={onModalClose} />, document.body);
 }
 
 function ModalContent({ children, onModalClose }: PropsWithChildren<Omit<ModalControls, "isModalOpen">>) {
   return (
     <>
-      <div className={styles.modalOverlay} />
+      <div className={styles.modalOverlay} onClick={onModalClose} />
       <div className={styles.modalContainer}>
         <div className={styles.modalBody}>
           <header className={styles.modalHeader}>
