@@ -38,7 +38,12 @@ function SentimentForm({ isAnalysisResultLoading, defaultText, setText, onInitia
             name="text"
             control={control}
             render={({ field }) => (
-              <Input {...field} disabled={isAnalysisResultLoading || field.disabled} placeholder="Love of wisdom" />
+              <Input
+                {...field}
+                role="textbox"
+                disabled={isAnalysisResultLoading || field.disabled}
+                placeholder="Love of wisdom"
+              />
             )}
           />
 
@@ -48,7 +53,9 @@ function SentimentForm({ isAnalysisResultLoading, defaultText, setText, onInitia
         </div>
         {errors.text && (
           <div className={styles.errorWrapper}>
-            <span className={styles.error}>{errors.text.message}</span>
+            <span data-testid="errorMessage" className={styles.error}>
+              {errors.text.message}
+            </span>
           </div>
         )}
       </div>
