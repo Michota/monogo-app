@@ -6,7 +6,9 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <InputView />
+      <div style={{ width: "100dvw", height: "100dvh" }}>
+        <InputView />
+      </div>
     </QueryClientProvider>
   );
 }

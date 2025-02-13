@@ -4,6 +4,7 @@ import { useSentimentAnalysis } from "@/hooks/useSentimentAnalysis";
 import { getDominantSentiment } from "@/utils/getDominantSentiment";
 import { useState } from "react";
 import SentimentForm from "./components/SentimentForm";
+import styles from "./InputView.module.css";
 
 function InputView() {
   const { text, analysisResult, setText, analyze, statuses } = useSentimentAnalysis();
@@ -22,7 +23,7 @@ function InputView() {
   };
 
   return (
-    <>
+    <div className={styles.view}>
       <SentimentForm
         isAnalysisResultLoading={isLoading}
         onInitializeAnalysis={handleAnalyze}
@@ -34,7 +35,7 @@ function InputView() {
           <SentimentDescription data={getDominantSentiment(analysisResult)} />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 
