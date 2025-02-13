@@ -36,6 +36,8 @@ a:hover {
 
 * {
   box-sizing: border-box;
+  /* 16px */
+  font-size: 1.6rem;
 }
 
 body {
@@ -44,6 +46,4 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  /* 16px */
-  font-size: 1.6rem;
 }
