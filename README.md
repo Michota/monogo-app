@@ -63,6 +63,3 @@ Before running the app, make sure you have the following installed:
 
 - **Internationalization**:  
   While I considered using `react-i18next` for internationalization, I decided to skip it in order to avoid complicating the project further.
-
-- **Error handling**:  
-  I couldn't really force API to throw error at me, so I did not wasted time to implement toasts, neither simple text message to display error if API returns one. Sorry.

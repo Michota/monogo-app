@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm test || { echo "Tests failed! Push aborted."; exit 1; }
+pnpm test -- --run || { echo "Tests failed! Push aborted."; exit 1; }

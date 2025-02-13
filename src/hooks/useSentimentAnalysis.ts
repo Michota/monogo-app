@@ -39,6 +39,8 @@ export const useSentimentAnalysis = () => {
   };
 
   return {
+    error: queryResult.error,
+
     /** A current state of text to be analyzed */
     text,
 
