@@ -38,11 +38,7 @@ function SentimentForm({ isAnalysisResultLoading, defaultText, setText, onInitia
             name="text"
             control={control}
             render={({ field }) => (
-              <Input
-                {...field}
-                disabled={isAnalysisResultLoading || field.disabled}
-                placeholder="Philosophy is the love of wisdom"
-              />
+              <Input {...field} disabled={isAnalysisResultLoading || field.disabled} placeholder="Love of wisdom" />
             )}
           />
 
