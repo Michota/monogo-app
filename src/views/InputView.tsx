@@ -28,7 +28,7 @@ function InputView() {
         isAnalysisResultLoading={isLoading}
         onInitializeAnalysis={handleAnalyze}
         setText={setText}
-        text={text}
+        defaultText={text}
       />
       {analysisResult && (
         <Modal isModalOpen={isModalOpen} onModalClose={() => setIsModalOpen(false)}>

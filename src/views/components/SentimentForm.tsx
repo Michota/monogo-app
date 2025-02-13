@@ -8,21 +8,21 @@ import { z } from "zod";
 
 interface SentimentFormProps {
   isAnalysisResultLoading: boolean;
-  text: string;
+  defaultText: string;
   setText: (text: string) => unknown;
   onInitializeAnalysis: () => void;
 }
 
 type FormValues = z.infer<typeof schema>;
 
-function SentimentForm({ isAnalysisResultLoading, text, setText, onInitializeAnalysis }: SentimentFormProps) {
+function SentimentForm({ isAnalysisResultLoading, defaultText, setText, onInitializeAnalysis }: SentimentFormProps) {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { text },
+    defaultValues: { text: defaultText },
   });
 
   const onSubmit = (data: FormValues) => {
