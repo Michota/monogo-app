@@ -3,11 +3,11 @@ import { Sentiment } from "@/types/sentiment";
 function createSentimentDescription(sentiment: Sentiment, isEmotionStrong: boolean) {
   switch (sentiment) {
     case "POSITIVE":
-      return isEmotionStrong ? "This is a very positive text" : "This text is likely positive";
+      return isEmotionStrong ? "To bardzo pozytywny tekst!" : "Ten tekst jest prawdopodobnie pozytywny.";
     case "NEGATIVE":
-      return isEmotionStrong ? "Woah! This text is harsh" : "This text seems to be negative";
+      return isEmotionStrong ? "Wow! Ten tekst jest ostry!" : "Ten tekst wydaje się być negatywny.";
     case "NEUTRAL":
-      return "This text seems to be neutral";
+      return "Ten tekst wydaje się być neutralny.";
   }
 }
 
