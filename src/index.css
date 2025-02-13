@@ -15,6 +15,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*::selection {
+  background-color: var(--brand);
+  color: black;
+}
+
 html {
   /* 10px */
   font-size: 62.5%;
