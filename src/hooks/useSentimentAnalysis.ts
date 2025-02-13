@@ -21,12 +21,12 @@ import { useState } from "react";
  *
  */
 export const useSentimentAnalysis = () => {
-  const [sentiment, setSentiment] = useState<string>("");
+  const [text, setText] = useState<string>("");
 
   // Not destructured to not lose reference
   const queryResult = useQuery({
-    queryKey: ["sentiment", sentiment],
-    queryFn: () => getSentimentAnalysis(sentiment),
+    queryKey: ["sentiment", text],
+    queryFn: () => getSentimentAnalysis(text),
     enabled: false,
   });
 
@@ -39,11 +39,11 @@ export const useSentimentAnalysis = () => {
   };
 
   return {
-    /** A current state of sentiment */
-    sentiment,
+    /** A current state of text to be analyzed */
+    text,
 
-    /** Function to update the sentiment text input. */
-    setSentiment,
+    /** Function to update the text. */
+    setText,
 
     /** Function to manually trigger sentiment analysis. */
     analyze,
